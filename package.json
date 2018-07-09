@@ -1,0 +1,57 @@
+{
+  "name": "atom-cursor",
+  "version": "0.9.0",
+  "description": "An immutable data container",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "dev": "cross-env NODE_ENV=development rollup -c -o lib/index.js",
+    "build": "cross-env NODE_ENV=production rollup -c -o lib/index.js",
+    "test": "babel-node --presets env -- ./node_modules/.bin/jasmine",
+    "lint": "eslint .",
+    "prepublish": "npm run clean && npm run test && npm run lint && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minifast/atom-cursor.git"
+  },
+  "keywords": [
+    "atom",
+    "cursor",
+    "observer"
+  ],
+  "author": "Ministry of Velocity LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minifast/atom-cursor/issues"
+  },
+  "homepage": "https://github.com/minifast/atom-cursor#readme",
+  "dependencies": {
+    "immutability-helper": "^2.7.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.2.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-module-resolver": "3.1.1",
+    "babel-preset-env": "1.6.1",
+    "cross-env": "5.1.4",
+    "eslint": "4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jasmine": "^2.10.1",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "fs-file-tree": "1.0.6",
+    "jasmine": "^3.1.0",
+    "rimraf": "2.6.2",
+    "rollup": "0.58.1",
+    "rollup-plugin-babel": "3.0.3",
+    "rollup-plugin-commonjs": "9.1.0",
+    "rollup-plugin-node-resolve": "3.3.0",
+    "rollup-plugin-replace": "2.0.0",
+    "rollup-plugin-uglify": "3.0.0"
+  }
+}

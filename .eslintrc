@@ -1,0 +1,10 @@
+{
+  "extends": ["standard"],
+  "plugins": ["jasmine"],
+  "env": {
+    "jasmine": "true",
+    "commonjs": "true",
+    "es6": "true",
+    "node": "true"
+  }
+}
