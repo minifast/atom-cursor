@@ -44,6 +44,12 @@ describe('Cursor', () => {
       })
     })
 
+    describe('when selected twice', () => {
+      it('returns a cursor at that path', () => {
+        expect(cursor.select('nested').select('eggs').get()).toEqual('delicious')
+      })
+    })
+
     describe('when supplied with a nonexistent path', () => {
       it('returns a cursor at that path', () => {
         expect(cursor.select('nested', 'data', 'structures').get()).toBeNull()

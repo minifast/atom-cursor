@@ -15,9 +15,9 @@ export default class Cursor {
     return value
   }
 
-  select (...path) {
-    const {atom} = _private.get(this)
-    const cursor = new Cursor(atom, path)
+  select (...localPath) {
+    const {atom, path} = _private.get(this)
+    const cursor = new Cursor(atom, path.concat(localPath))
     return cursor
   }
 
