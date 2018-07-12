@@ -1,6 +1,6 @@
 {
   "name": "atom-cursor",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "An immutable data container",
   "main": "lib/index.js",
   "scripts": {
