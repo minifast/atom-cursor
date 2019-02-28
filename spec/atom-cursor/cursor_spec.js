@@ -8,7 +8,7 @@ describe('Cursor', () => {
     content = {nested: {eggs: 'delicious'}}
     atom = new Atom(content)
     cursor = new Cursor(atom)
-    spyOn(console, 'warn')
+    spyOn(console, 'warn').and.stub()
   })
 
   describe('#get', () => {

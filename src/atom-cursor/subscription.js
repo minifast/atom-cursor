@@ -1,5 +1,5 @@
 import isEqual from 'fast-deep-equal'
-import dig from './lib/dig'
+import dig from './dig'
 
 const _private = new WeakMap()
 

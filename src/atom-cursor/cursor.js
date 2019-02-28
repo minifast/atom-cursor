@@ -1,5 +1,5 @@
-import dig from './lib/dig'
-import Subscription from './Subscription'
+import dig from './dig'
+import Subscription from './subscription'
 
 const _private = new WeakMap()
 

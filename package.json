@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production rollup -c -o lib/index.js",
     "test": "babel-node --presets env -- ./node_modules/.bin/jasmine",
     "lint": "eslint .",
-    "prepublish": "npm run clean && npm run test && npm run lint && npm run build"
+    "prepublishOnly": "npm run clean && npm run test && npm run lint && npm run build"
   },
   "repository": {
     "type": "git",

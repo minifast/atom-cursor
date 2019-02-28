@@ -1,5 +1,4 @@
 import update from 'immutability-helper'
-import warning from './lib/warning'
 import Cursor from './cursor'
 
 const _private = new WeakMap()
@@ -25,7 +24,7 @@ export default class Atom {
     const {data, log, subscriptions} = _private.get(this)
     _private.set(this, {data, subscriptions, log: log.concat([command])})
     return Promise.resolve().then(this.compact.bind(this)).catch((message) => {
-      warning(message)
+      console.warn(message)
       return Promise.reject(message)
     })
   }
@@ -36,7 +35,7 @@ export default class Atom {
       try {
         return update(currentData, command)
       } catch (exception) {
-        warning(exception)
+        console.warn(exception)
         return currentData
       }
     }, data)
