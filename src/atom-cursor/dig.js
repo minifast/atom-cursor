@@ -5,7 +5,7 @@ const dig = (pile, path) => {
 
   const [head, ...tail] = path
 
-  if (typeof(pile[head]) === 'object') {
+  if (typeof pile[head] === 'object') {
     return dig(pile[head], tail)
   } else if (pile[head] === undefined) {
     return null

@@ -9,5 +9,8 @@ jobs:
           name: NPM Install
           command: npm install
       - run:
+          name: ESLint
+          command: npm run lint
+      - run:
           name: Test
           command: npm test
