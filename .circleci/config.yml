@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+          name: NPM Install
+          command: npm install
+      - run:
+          name: Test
+          command: npm test
