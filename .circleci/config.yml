@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node
     steps:
@@ -14,3 +14,31 @@ jobs:
       - run:
           name: Test
           command: npm test
+
+  publish:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run:
+          name: Configure NPM
+          command: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+      - run:
+          name: NPM Install
+          command: npm install
+      - run:
+          name: NPM Publish
+          command: npm publish
+
+workflows:
+  version: 2
+  atom-cursor:
+    jobs:
+      - test
+      - publish:
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - publish
